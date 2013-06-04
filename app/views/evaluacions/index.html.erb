@@ -1,0 +1,24 @@
+<br/>
+<br/>
+<br/>
+<div class="hero-unit">
+	<div class = "page-header">
+		<h1><STRONG>Lista De Escenarios de Incidente</STRONG></h1>
+		* Un escenario de incidente es una amenaza que explota una vulnerabilidad y afecta a un activo generando una consecuencia.
+	</div>
+	<table class = "table table-bordered">
+	  <tr>
+	    <th>Descripcion</th>
+	    <th></th>
+	    <th></th>
+	  </tr>
+
+	<% @consecuences.each do |consecuence| %>
+	  <tr>
+	    <td><%= consecuence.descripcion %></td>
+	    <td><%= link_to "Evaluar", evaluar_consecuencia_path(consecuence) %></td>
+	    <td><%= link_to "Mostrar", show_consecuencia_path(consecuence) %></td>
+	  </tr>
+	<% end %>
+	</table>
+</div>

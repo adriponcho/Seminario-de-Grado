@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+<div class="hero-unit">
+<p>
+  <h3><strong>Nombre:</strong></h3> 
+  &nbsp;&nbsp;&nbsp;&nbsp;<%= @alcance_limitacione.nombre %>
+</p>
+
+<p>
+  <h3><strong>Descripcion:</strong></h3> 
+  &nbsp;&nbsp;&nbsp;&nbsp;<%= @alcance_limitacione.descripcion %>
+</p>
+
+<p>
+  <h3><strong>Tipo:</strong></h3> 
+  &nbsp;&nbsp;&nbsp;&nbsp;<%= @alcance_limitacione.tipo %>
+</p>
+
+<!--<p>
+  <b>Estado:</b>
+  <%= @alcance_limitacione.estado %>
+</p>-->
+</div>
+
+<div class="hero-unit">
+<%= link_to 'Editar', edit_alcance_limitacione_path(@alcance_limitacione) %> |
+<%= link_to 'Volver', alcance_limitaciones_path %>
+</div>

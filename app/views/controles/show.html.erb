@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nobre:</b>
+  <%= @controle.nobre %>
+</p>
+
+<p>
+  <b>Tipo:</b>
+  <%= @controle.tipo %>
+</p>
+
+<p>
+  <b>Descrpcion:</b>
+  <%= @controle.descrpcion %>
+</p>
+
+
+<%= link_to 'Edit', edit_controle_path(@controle) %> |
+<%= link_to 'Back', controles_path %>

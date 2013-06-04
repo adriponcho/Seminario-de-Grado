@@ -1,0 +1,60 @@
+<br/>
+<br/>
+<br/>
+<div class="center hero-unit">
+	 <div class = "page-header">
+    	<h1><strong>Registrarse</strong></h1>
+ 	 </div>
+
+	<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+	  <%= devise_error_messages! %>
+
+	  <div class="field">
+	    <%= f.label :ci %><br />
+	    <%= f.text_field :ci %>
+	  </div>
+
+	  <div class="field">
+	    <%= f.label :nombre %><br />
+	    <%= f.text_field :nombre %>
+	  </div>
+
+	  <div class="field">
+	    <%= f.label :apellido %><br />
+	    <%= f.text_field :apellido %>
+	  </div>
+
+	  <div class="field">
+	    <%= f.label :cargo %><br />
+	    <%= f.text_field :cargo %>
+	  </div>
+
+	  <div class="field">
+	  	<%= f.label :email %><br />
+	  	<%= f.email_field :email, :autofocus => true %>
+	  </div>
+
+	  <div class="field">
+	  	<%= f.label :contraseña %><br />
+	  	<%= f.password_field :password %>
+	  </div>
+
+	  <div class="field">
+	  	<%= f.label :confirmar_contraeña %><br />
+	  	<%= f.password_field :password_confirmation %>
+	  </div>
+
+	  <div class="field">
+	  	<%= f.label :rol %><br />
+	  	<% roles = {'admin' => 'admin', 'gerente' => 'gerente', 'representante de area' => 'representante de area'} %>
+	  	<%= f.select :rol, roles %>
+	  </div>
+
+	  <button class = "btn btn-inverse" type = "f.submit">
+      	Registrarse
+      </button>
+
+	<% end %>
+
+</div>
+<%= render "devise/shared/links" %>

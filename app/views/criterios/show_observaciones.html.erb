@@ -1,0 +1,23 @@
+<br/>
+<br/>
+<br/>
+<div class="hero-unit">
+	
+  	<table class = "table table-bordered">
+  		<tr>
+  			<th>
+  				<div class = "page-header">
+    			<h2><strong>Observaciones</strong></h2>
+  				</div>
+  			</th>
+  		</tr>
+  		
+	    <% @criterio.observacions.each do |o| %>
+	      <tr>
+	        <td><span class="label label-important">observacion:</span><h4><%= o.texto %></h4></td>
+	      </tr>
+	    <% end %>
+    </table>
+
+    <%= link_to 'Volver', revision_final_path %>
+</div>

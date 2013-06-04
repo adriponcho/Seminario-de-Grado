@@ -1,0 +1,39 @@
+<%= form_for(@activo) do |f| %>
+  <% if @activo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@activo.errors.count, "error") %> prohibited this activo from being saved:</h2>
+
+      <ul>
+      <% @activo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="hero-unit">
+  <div class="field">
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :descripcion %><br />
+    <%= f.text_area :descripcion %>
+  </div>
+  <div class="field">
+    <%= f.label :propietario %><br />
+    <%= f.text_field :propietario %>
+  </div>
+  <div class="field">
+    <% tipos = {'actividades y procesos del negocio' =>'actividades y procesos del negocio', 'informacion'=> 'informacion', 'hardware' =>'hardware', 'software'=>'software','redes' => 'redes', 'personal' =>  'personal', 'ubicacion'=> 'ubicacion'} %>
+    <%= f.label :tipo %><br />
+    <%= f.select :tipo , tipos %>
+    
+  </div>
+ 
+  <div class="actions">
+    <button class = "btn btn-inverse" type = "f.submit">
+        Crear Activo
+      </button>
+  </div>
+</div>
+<% end %>

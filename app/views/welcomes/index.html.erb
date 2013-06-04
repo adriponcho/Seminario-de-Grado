@@ -1,0 +1,134 @@
+<html>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<center><h1><strong>PAGINA DE BIENVENIDA</strong></h1></center>
+<head>
+  <link rel="stylesheet" href="nivo-slider.css" type="text/css" media="screen" />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  <script src="jquery.nivo.slider.pack.js" type="text/javascript"></script>
+  <script type="text/javascript">
+      $(window).load(function() {
+          $('#slider').nivoSlider({
+              effect: 'random', // Specify sets like: 'fold,fade,sliceDown'
+              slices: 15, // For slice animations
+              boxCols: 8, // For box animations
+              boxRows: 4, // For box animations
+              animSpeed: 500, // Slide transition speed
+              pauseTime: 3000, // How long each slide will show
+              startSlide: 0, // Set starting Slide (0 index)
+              directionNav: true, // Next & Prev navigation
+              controlNav: true, // 1,2,3... navigation
+              controlNavThumbs: false, // Use thumbnails for Control Nav
+              pauseOnHover: true, // Stop animation while hovering
+              manualAdvance: false, // Force manual transitions
+              prevText: 'Prev', // Prev directionNav text
+              nextText: 'Next', // Next directionNav text
+              randomStart: false, // Start on a random slide
+              beforeChange: function(){}, // Triggers before a slide transition
+              afterChange: function(){}, // Triggers after a slide transition
+              slideshowEnd: function(){}, // Triggers after all slides have been shown
+              lastSlide: function(){}, // Triggers when last slide is shown
+              afterLoad: function(){} // Triggers when slider has loaded
+          });
+      });
+  </script>
+
+  <style type="text/css">
+
+
+
+
+      #container {
+          width: 100%;
+          border: 1px solid gray;
+          margin: 10px;
+          margin-left: auto;
+          margin-right: auto;
+
+      }
+
+      #sidebar-a {
+          float: left;
+          width: 45%;
+          margin: 0;
+          margin-right: ;
+          padding: 5px;
+          background-color: rgb(235, 235, 235);
+      }
+
+      #sidebar-b {
+          float: right;
+          width: 50%;
+          margin: 0;
+          margin-left: ;
+          padding: 10px;
+          background-color: rgb(235, 235, 235);
+      }
+
+      #footer {
+          clear: both;
+          padding: 5px;
+          margin-top: ;
+
+          background-color: rgb(213, 219, 225);
+      }
+
+  </style>
+</head>
+
+<body>
+<div id="container">
+
+  <div id="sidebar-a">
+    <iframe class="youtube-player" type="text/html" width="95%" height="385" src="http://www.youtube.com/watch?v=1cuR45WIEVw" frameborder="0"></iframe>
+  </div>
+
+  <div id="sidebar-b">
+    El propósito del control de riesgo es analizar el funcionamiento, la efectividad y el cumplimiento de las medidas de protección, para determinar y ajustar sus deficiencias.
+    <br/>
+    Las actividades del proceso, tienen que estar integradas en el plan operativo institucional, donde se define los momentos de las intervenciones y los responsables de ejecución.
+    <br/>
+    Medir el cumplimiento y la efectividad de las medidas de protección requiere que levantemos constantemente registros sobre la ejecución de las actividades, los eventos de ataques y sus respectivos resultados. Estos tenemos que analizados frecuentemente. Dependiendo de la gravedad, el incumplimiento y el sobrepasar de las normas y reglas, requieren sanciones institucionales para los funcionarios.
+    <br/>
+    En el proceso continuo de la Gestión de riesgo, las conclusiones que salen como resultado del control de riesgo, nos sirven como fuente de información, cuando se entra otra vez en el proceso de la Análisis de riesgo.
+    <br/>
+    <br/>
+    En su forma general contiene cuatro fases
+    <UL>
+      <li>Análisis: Determina los componentes de un sistema que requiere protección, sus vulnerabilidades que lo debilitan y las amenazas que lo ponen en peligro, con el resultado de revelar su grado de riesgo.</li>
+      <li> Clasificación: Determina si los riesgos encontrados y los riesgos restantes son aceptables.</li>
+      <li>Reducción: Define e implementa las medidas de protección. Además sensibiliza y capacita los usuarios conforme a las medidas.</li>
+      <li>Control: Analiza el funcionamiento, la efectividad y el cumplimiento de las medidas, para determinar y ajustar las medidas deficientes y sanciona el incumplimiento.</li>
+    </UL>
+    <br/>
+
+    Todo el proceso está basado en las llamadas políticas de seguridad, normas y reglas institucionales, que forman el marco operativo del proceso, con el propósito de
+    potenciar las capacidades institucionales, reduciendo la vulnerabilidad y limitando las amenazas con el resultado de reducir el riesgo.
+    <br/>
+    <br/>
+    <ul>
+      <li>Orientar el funcionamiento organizativo y funcional.</li>
+      <li>Garantizar comportamiento homogéneo.</li>
+      <li>Garantizar corrección de conductas o prácticas que nos hacen vulnerables.</li>
+      <li>Conducir a la coherencia entre lo que pensamos, decimos y hacemos.</li>
+    </ul>
+
+    &nbsp;</div>
+
+  <div id="footer">
+    <div class="slider-wrapper">
+      <div id="slider" class="nivoSlider">
+        <img src="images/small/1.jpg" alt="" />
+        <img src="images/small/2.jpg" alt="" />
+        <img src="images/small/3.jpg" alt="" />
+        <img src="images/small/4.jpg" alt="" />
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

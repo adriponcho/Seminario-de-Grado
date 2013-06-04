@@ -1,0 +1,29 @@
+<br/>
+<br/>
+<br/>
+<div class="hero-unit">
+  <p id="notice"><%= notice %></p>
+  <div class = "page-header">
+    <h2><STRONG>Lista de amenazas</STRONG></h2>
+  </div>
+
+  <table class = "table table-bordered">
+    <tr>
+      <th>Origen</th>
+      <th>Tipo</th>
+      <th>Descripcion</th>
+      <th></th>
+    </tr>
+
+  <% @amenazas.each do |amenaza| %>
+    <tr>
+      <td><%= amenaza.origen %></td>
+      <td><%= amenaza.tipo %></td>
+      <td><%= amenaza.descripcion %></td>
+      <td><%= link_to 'Eliminar', amenaza, method: :delete, data: { confirm: 'Esta seguro de eliminar esta amenaza?' } %></td>
+    </tr>
+  <% end %>
+  </table>
+
+  <%= link_to 'Volver', amenazas_path %>
+</div>

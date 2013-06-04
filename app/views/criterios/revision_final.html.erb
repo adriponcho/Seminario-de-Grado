@@ -1,0 +1,37 @@
+<br/>
+<br/>
+<br/>
+<div class="hero-unit">
+  <p id="notice"><%= notice %></p>
+  <div class = "page-header">
+    <h1><strong>Lista de criterios</strong></h1>
+  </div>
+
+  <%= form_tag revision_final_path, :method => 'get' do %>
+    <h5><strong>Filtrar por tipo:</strong></h5>
+    <div class = "field">
+      <%= text_field_tag :tipo, params[:tipo] %>
+      <button class = "btn btn-inverse" type = "submit_tag">
+            Buscar
+      </button>
+    </div>
+  <% end %>
+
+    <table class = "table table-bordered">
+      <tr>
+        <th>Nombre</th>
+        <th>Tipo</th>
+        <th><center>Acciones</center></th>
+      </tr>
+
+    <% @criterios.each do |criterio| %>
+      <tr>
+        <td><%= criterio.nombre %></td>
+        <td><%= criterio.tipo %></td>
+        <td><%= link_to 'Mostrar', show_criterio_final_path(criterio) %></td>
+        <td><%= link_to 'Observaciones', show_observaciones_path(criterio) %></td>
+        <td><%= link_to criterio.estado == true ? 'Desaprobar' : 'Aprobar', estado_final_criterio_path(criterio) %></td>
+      </tr>
+    <% end %>
+    </table>
+</div>

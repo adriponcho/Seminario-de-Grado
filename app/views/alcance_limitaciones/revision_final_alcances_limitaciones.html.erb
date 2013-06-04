@@ -1,0 +1,39 @@
+<br/>
+<br/>
+<br/>
+<div class="hero-unit">
+  <p id="notice"><%= notice %></p>
+  <div class = "page-header">
+    <h1><strong>Lista de alcances y limitaciones</strong></h1>
+  </div>
+
+  <%= form_tag revision_final_alcances_limitaciones_path, :method => 'get' do %>
+    <h5><strong>Filtrar por tipo:</strong></h5>
+    <div class = "field">
+      <%= text_field_tag :tipo, params[:tipo] %>
+      <button class = "btn btn-inverse" type = "submit_tag">
+            Buscar
+      </button>
+    </div>
+  <% end %>
+
+    <table class = "table table-bordered">
+      <tr>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th>Tipo</th>
+        <th><center>Acciones</center></th>
+      </tr>
+
+    <% @alcance_limitaciones.each do |alcance_limitacione| %>
+      <tr>
+        <td><%= alcance_limitacione.nombre %></td>
+        <td><%= alcance_limitacione.descripcion %></td>
+        <td><%= alcance_limitacione.tipo %></td>
+        <td><%= link_to 'Mostrar', alcance_limitacione %></td>
+        <td><%= link_to 'Observaciones', show_observaciones_alcances_limitaciones_path(alcance_limitacione) %></td>
+        <td><%= link_to alcance_limitacione.estado == true ? 'Desaprobar' : 'Aprobar', estado_final_alcances_limitaciones_path(alcance_limitacione) %></td>
+      </tr>
+    <% end %>
+    </table>
+</div>

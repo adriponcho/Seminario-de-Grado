@@ -1,0 +1,36 @@
+<br/>
+<br/>
+<br/>
+
+<div class="hero-unit">
+  <div class = "page-header">
+    <h1><strong>Lista de criterios</strong></h1>
+  </div>
+    <table class = "table table-bordered">
+      <thead>
+        <tr>
+          <th>Ci</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Rol</th>
+          <th><center>Acciones</center></th>
+        </tr>
+      </thead>
+    <% @users.each do |user| %>
+      <tbody>
+        <tr>
+          <td><%= user.ci %></td>
+          <td><%= user.nombre %></td>
+          <td><%= user.apellido %></td>
+          <td><%= user.rol %></td>
+          <td><%= link_to 'Mostrar', show_user_path(user) %></td>
+          <td><%= link_to 'Editar', edit_user_path(user) %></td>
+          <td><%= link_to 'Eliminar', destroy_user_path(user), data: { confirm: 'Esta seguro de eliminar usuario?' } %></td>
+        </tr>
+      </tbody>
+    <% end %>
+    </table>
+
+    <br />
+    <%= link_to "Registrar usuario", new_user_path %>
+</div>

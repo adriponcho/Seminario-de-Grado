@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  descripcion: MyText
+  naturaleza: MyString
+  vulnerabilidad: 
+
+two:
+  descripcion: MyText
+  naturaleza: MyString
+  vulnerabilidad: 

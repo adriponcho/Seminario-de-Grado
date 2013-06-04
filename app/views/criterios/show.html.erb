@@ -1,0 +1,32 @@
+<br/>
+<br/>
+<br/>
+<p id="notice"><%= notice %></p>
+<div class="hero-unit">
+
+  <div class = "page-header">
+    <h1><strong>Informacion de criterio</strong></h1>
+  </div>
+<p>
+  <span class="label label-important">Nombre:</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @criterio.nombre %> <br/>
+</p>
+
+<p>
+  <span class="label label-important">Descripcion:</span> &nbsp;<%= @criterio.descripcion %> <br/>
+</p>
+
+<p>
+  <span class="label label-important">Tipo:</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @criterio.tipo %> <br/>
+</p>
+
+</div>
+
+<div class="hero-unit">
+  <% if current_user.rol == "admin" %>
+    <%= link_to 'Editar', edit_criterio_path(@criterio) %> |
+    <%= link_to 'ingresar criterios', criterios_path %> |
+    <%= link_to 'Volver', criterios_path %>
+  <% else %>
+    <%= link_to 'Volver', revision_criterios_path %>
+  <% end %>
+</div>

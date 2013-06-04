@@ -1,0 +1,26 @@
+<br/>
+<br/>
+<br/>
+<p id="notice"><%= notice %></p>
+<div class="hero-unit">
+
+  <div class = "page-header">
+    <h1><strong>Informacion de usuario</strong></h1>
+  </div>
+<p>
+  <span class="label label-important">ci:</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @user.ci %> <br/>
+</p>
+
+<p>
+  <span class="label label-important">nombre:</span> &nbsp;<%= @user.nombre %> <br/>
+</p>
+
+<p>
+  <span class="label label-important">apellido:</span> &nbsp;&nbsp;&nbsp;<%= @user.apellido %> <br/>
+</p>
+
+</div>
+
+<div class="hero-unit">
+    <%= link_to 'Volver', users_path %>
+</div>

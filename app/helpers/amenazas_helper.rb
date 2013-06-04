@@ -1,0 +1,2 @@
+module AmenazasHelper
+end

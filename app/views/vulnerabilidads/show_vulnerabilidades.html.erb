@@ -1,0 +1,27 @@
+<br/>
+<br/>
+<br/>
+<div class="hero-unit">
+  <p id="notice"><%= notice %></p>
+  <div class = "page-header">
+    <h2><STRONG>Lista de vulnerabilidades</STRONG></h2>
+  </div>
+
+  <table class = "table table-bordered">
+    <tr>
+      <th>Tipo</th>
+      <th>Descripcion</th>
+      <th></th>
+    </tr>
+
+  <% @vulnerabilidades.each do |vulnerabilidad| %>
+    <tr>
+      <td><%= vulnerabilidad.tipo %></td>
+      <td><%= vulnerabilidad.descripcion %></td>
+      <td><%= link_to 'Eliminar', vulnerabilidad, method: :delete, data: { confirm: 'Esta seguro de eliminar esta vulnerabilidad?' } %></td>
+    </tr>
+  <% end %>
+  </table>
+
+  <%= link_to 'Volver', vulnerabilidads_path %>
+</div>

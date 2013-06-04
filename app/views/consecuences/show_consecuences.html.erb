@@ -1,0 +1,27 @@
+<br/>
+<br/>
+<br/>
+<div class="hero-unit">
+  <p id="notice"><%= notice %></p>
+  <div class = "page-header">
+    <h2><STRONG>Lista de Consecuencias</STRONG></h2>
+  </div>
+
+  <table class = "table table-bordered">
+    <tr>
+      <th>Descripcion</th>
+      <th>Naturaleza</th>
+      <th></th>
+    </tr>
+
+  <% @consecuences.each do |consecuence| %>
+    <tr>
+      <td><%= consecuence.descripcion %></td>
+      <td><%= consecuence.naturaleza %></td>
+      <td><%= link_to 'Eliminar', consecuence, method: :delete, data: { confirm: 'Esta seguro de eliminar esta consecuencia?' } %></td>
+    </tr>
+  <% end %>
+  </table>
+
+  <%= link_to 'Volver', consecuences_path %>
+</div>

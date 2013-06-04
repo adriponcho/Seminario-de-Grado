@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  descripcion: MyString
+  tipo: MyString
+  amenaza: 
+
+two:
+  descripcion: MyString
+  tipo: MyString
+  amenaza: 

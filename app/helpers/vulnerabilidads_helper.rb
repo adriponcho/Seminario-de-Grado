@@ -1,0 +1,2 @@
+module VulnerabilidadsHelper
+end

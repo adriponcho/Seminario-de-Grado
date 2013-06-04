@@ -1,0 +1,86 @@
+<br/>
+<br/>
+<br/>
+<div class="hero-unit">
+	<div class = "page-header">
+		<h1><STRONG>Evaluacion de Escenario de Incidente</STRONG></h1>
+	</div>
+
+	<table class = "table table-bordered">
+	  <tr>
+	    <th></th>
+	    <th>Probabilidad del Escenario de Incidente</th>
+	    <th>Muy Baja (Muy Improbable)</th>
+	    <th>Baja (Improbable)</th>
+	    <th>Media (Posible)</th>
+	    <th>Alta (Probable)</th>
+	    <th>Muy Alta (Frecuente)</th>
+	  </tr>
+	  <tr>
+	    <th ROWSPAN=5>Impacto en el negocio</th>
+	    <td>Muy Baja</td>
+	    <td>0</td>
+	    <td>1</td>
+	    <td>2</td>
+	    <td>3</td>
+	    <td>4</td>	    
+	  </tr>
+	  <tr>
+	    <td>Baja</td>
+	    <td>1</td>
+	    <td>2</td>
+	    <td>3</td>
+	    <td>4</td>
+	    <td>5</td>	    
+	  </tr>
+	  <tr>
+	    <td>Media</td>
+	    <td>2</td>
+	    <td>3</td>
+	    <td>4</td>
+	    <td>5</td>
+	    <td>6</td>	    
+	  </tr>
+	  <tr>
+	    <td>Alta</td>
+	    <td>3</td>
+	    <td>4</td>
+	    <td>5</td>
+	    <td>6</td>
+	    <td>7</td>	    
+	  </tr>
+	  <tr>
+	    <td>Muy Alta</td>
+	    <td>4</td>
+	    <td>5</td>
+	    <td>6</td>
+	    <td>7</td>
+	    <td>8</td>	    
+	  </tr>
+	</table>
+
+	<%= form_for([@consecuence, @consecuence.evaluacions.build]) do |f| %>
+        <h2><strong>Asignar Evaluacion</strong></h2>
+        
+          <div class="field">
+            <% votos = {'1' => 1, '2' => 2, '3' => 3,'4' => 4,'5' => 5,'6' => 6,'7' => 7,'8' => 8} %>
+            <%= f.label :voto %><br />
+            <%= f.select :voto, votos %>
+          </div>
+
+          <div class = "action">
+            <button class = "btn btn-inverse" type = "f.submit">
+                Aceptar
+            </button>
+          </div>
+    <% end %>
+
+    <% @consecuence.evaluacions.each do |e|%>
+    	<%= e.voto%>
+    <%end%>
+
+  <%= link_to 'Volver', evaluacions_path %>
+
+</div>
+
+

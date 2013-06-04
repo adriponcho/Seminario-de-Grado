@@ -1,0 +1,45 @@
+<br/>
+<br/>
+<br/>
+<p id="notice"><%= notice %></p>
+<div class="hero-unit">
+
+  <div class = "page-header">
+    <h1><strong>Informacion de criterio</strong></h1>
+  </div>
+	<p>
+	  <span class="label label-important">Nombre:</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @criterio.nombre %> <br/>
+	</p>
+
+	<p>
+	  <span class="label label-important">Descripcion:</span> &nbsp;<%= @criterio.descripcion %> <br/>
+	</p>
+
+	<p>
+	  <span class="label label-important">Tipo:</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @criterio.tipo %> <br/>
+	</p>
+
+	<%= form_for([@criterio, @criterio.observacions.build]) do |f| %>
+		<div class = "field">
+			<h3><strong>Observaciones</strong></h3>
+			<%= f.text_area :texto, cols: 30, rows: 10 %>
+		</div>
+
+		<div class = "action">
+			<button class = "btn btn-inverse" type = "f.submit">
+       			Aceptar
+    		</button>
+		</div>
+	<% end %>
+	
+	<h2><strong>Observaciones</strong></h2>
+		<% @criterio.observacions.each do |o| %>
+			<table class = "table table-condensed">
+				<h3><%= o.texto %></h3>
+			</table>
+		<% end %>
+</div>
+
+<div class="hero-unit">
+	<%= link_to 'Volver', revision_criterios_path %>
+</div>

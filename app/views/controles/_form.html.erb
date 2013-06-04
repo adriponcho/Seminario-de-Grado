@@ -1,0 +1,33 @@
+<%= form_for(@controle) do |f| %>
+  <% if @controle.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@controle.errors.count, "error") %> prohibited this controle from being saved:</h2>
+
+      <ul>
+      <% @controle.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="hero-unit">
+  <div class="field">
+    <%= f.label :nobre %><br />
+    <%= f.text_field :nobre %>
+  </div>
+  <div class="field">
+    <% tipos = {'implementado' =>'implementado', 'nuevo'=> 'nuevo'} %>
+    <%= f.label :tipo %><br />
+     <%= f.select :tipo , tipos %>
+  </div>
+  <div class="field">
+    <%= f.label :descrpcion %><br />
+    <%= f.text_area :descrpcion %>
+  </div>
+  <div class="actions">
+    <button class = "btn btn-inverse" type = "f.submit">
+        Crear control
+      </button>
+  </div>
+</div>
+<% end %>

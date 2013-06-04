@@ -1,0 +1,46 @@
+<br/>
+<br/>
+<br/>
+<div class="hero-unit">
+  <p id="notice"><%= notice %></p>
+  <div class = "page-header">
+    <h2><STRONG>Informacion de amenaza</STRONG></h2>
+  </div>
+
+  <p>
+    <b>Tipo:</b>
+    <%= @amenaza.tipo %>
+  </p>
+
+  <p>
+    <b>Origen:</b>
+    <%= @amenaza.origen %>
+  </p>
+
+  <p>
+    <b>Descripcion:</b>
+    <%= @amenaza.descripcion %>
+  </p>
+
+    <%= form_for([@amenaza, @amenaza.vulnerabilidads.build]) do |f| %>
+        <h2><strong>Asignar vulnerabilidad</strong></h2>
+
+          <div class="field">
+            <%= f.label :tipo %><br />
+            <%= f.text_field :tipo %>
+          </div>
+
+          <div class="field">
+            <%= f.label :descripcion %><br />
+            <%= f.text_area :descripcion, :size => '60x10' %>
+          </div>
+
+          <div class = "action">
+            <button class = "btn btn-inverse" type = "f.submit">
+                Aceptar
+            </button>
+          </div>
+    <% end %>
+
+  <%= link_to 'Volver', vulnerabilidads_path %>
+</div>

@@ -1,0 +1,61 @@
+<br/>
+<br/>
+<br/>
+<div class="hero-unit">
+  <p id="notice"><%= notice %></p>
+  <div class = "page-header">
+    <h2><STRONG>Informacion de activo</STRONG></h2>
+  </div>
+
+  <p>
+    <b>Nombre:</b>
+    <%= @activo.nombre %>
+  </p>
+
+  <p>
+    <b>Descripcion:</b>
+    <%= @activo.descripcion %>
+  </p>
+
+  <p>
+    <b>Propietario:</b>
+    <%= @activo.propietario %>
+  </p>
+
+  <p>
+    <b>Tipo:</b>
+    <%= @activo.tipo %>
+  </p>
+
+  <p>
+    <b>Prioridad:</b>
+    <%= @activo.prioridad %>
+  </p>
+
+    <%= form_for([@activo, @activo.amenazas.build]) do |f| %>
+        <h2><strong>Asignar amenaza</strong></h2>
+          <div class="field">
+            <%= f.label :origen %><br />
+            <%= f.text_field :origen %>
+          </div>
+
+          <div class="field">
+            <% tipos = {'Fisico' => 'Fisico', 'Eventos Naturales' => 'Eventos Naturales', 'Perdida de servicios' => 'Perdida de servicios','Radiacion' => 'Radiacion','Compromiso de informacion' => 'Compromiso de informacion','Fallas Tecnicas' => 'Fallas Tecnicas','Acciones no autorizadas' => 'Acciones no autorizadas','Compromiso de Funciones' => 'Compromiso de Funciones'} %>
+            <%= f.label :tipo %><br />
+            <%= f.select :tipo , tipos %>
+          </div>
+
+          <div class="field">
+            <%= f.label :descripcion %><br />
+            <%= f.text_area :descripcion, :size => '60x10' %>
+          </div>
+
+          <div class = "action">
+            <button class = "btn btn-inverse" type = "f.submit">
+                Aceptar
+            </button>
+          </div>
+    <% end %>
+
+  <%= link_to 'Volver', amenazas_path %>
+</div>

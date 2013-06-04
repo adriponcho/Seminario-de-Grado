@@ -1,0 +1,35 @@
+<br/>
+<br/>
+<br/>
+
+<div class="hero-unit">
+  <div class = "page-header">
+    <h1><strong>Lista de criterios</strong></h1>
+  </div>
+    <table class = "table table-bordered">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Tipo</th>
+          <th>Estado</th>
+          <th><center>Acciones</center></th>
+        </tr>
+      </thead>
+    <% @criterios.each do |criterio| %>
+      <tbody>
+        <tr>
+          <td><%= criterio.nombre %></td>
+          <td><%= criterio.tipo %></td>
+          <td><%= criterio.estado == true ? 'Aprobado' : 'Desaprobado' %></td>
+          <td><%= link_to 'Mostrar', criterio %></td>
+          <td><%= link_to 'Editar', edit_criterio_path(criterio) %></td>
+          <td><%= link_to 'Eliminar', criterio, method: :delete, data: { confirm: 'Esta seguro de eliminar el criterio?' } %></td>
+        </tr>
+      </tbody>
+    <% end %>
+    </table>
+
+    <br />
+
+    <%= link_to 'Nuevo Criterio', new_criterio_path, { :class => "btn btn-inverse" } %>
+</div>

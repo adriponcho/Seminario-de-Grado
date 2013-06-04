@@ -1,0 +1,25 @@
+<br/>
+<br/>
+<br/>
+<div class="hero-unit">
+	<div class = "page-header">
+		<h1><STRONG>Lista De Activos</STRONG></h1>
+	</div>
+	<table class = "table table-bordered">
+	  <tr>
+	    <th>Nombre</th>
+	    <th>Tipo</th>
+	    <th></th>
+	    <th></th>
+	  </tr>
+
+	<% @activos.each do |activo| %>
+	  <tr>
+	    <td><%= activo.nombre %></td>
+	    <td><%= activo.tipo %></td>
+	    <td><%= link_to "Asignar amenaza", show_activo_path(activo) %></td>
+	    <td><%= link_to "Mostrar Amenazas", show_amenazas_path(activo) %></td>
+	  </tr>
+	<% end %>
+	</table>
+</div>

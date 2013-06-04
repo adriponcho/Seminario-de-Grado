@@ -1,0 +1,25 @@
+<br/>
+<br/>
+<br/>
+<div class="hero-unit">
+	<div class = "page-header">
+		<h1><STRONG>Lista De Vulnerabilidades</STRONG></h1>
+	</div>
+	<table class = "table table-bordered">
+	  <tr>
+	    <th>Tipo</th>
+	    <th>Descripcion</th>
+	    <th></th>
+	    <th></th>
+	  </tr>
+
+	<% @vulnerabilidades.each do |vulnerabilidad| %>
+	  <tr>
+	    <td><%= vulnerabilidad.tipo %></td>
+	    <td><%= vulnerabilidad.descripcion %></td>
+	    <td><%= link_to "Asignar consecuencia", show_vulnerabilidad_path(vulnerabilidad) %></td>
+	    <td><%= link_to "Mostrar consecuencias", show_consecuences_path(vulnerabilidad) %></td>
+	  </tr>
+	<% end %>
+	</table>
+</div>

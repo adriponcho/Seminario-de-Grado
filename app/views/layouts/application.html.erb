@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sistema Control De Riesgos</title>
+  <%= stylesheet_link_tag    "metro-bootstrap", :media => "all" %>
+  <%= stylesheet_link_tag    "styles", :media => "all" %>
+  <%= stylesheet_link_tag    "styl", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<header class="navbar navbar-fixed-top navbar-inverse">
+	<div class = 'navbar-inner'>
+		<div class = '"container"'>
+			<div id='cssmenu'>
+					<ul>
+					<% if user_signed_in? %>
+					   <li><%= link_to 'Inicio', root_path %></li>
+
+					   <li class='has-sub '><a href='#'><span>Usuarios</span></a>
+					   	<ul>
+					   		<% if current_user.rol == 'admin'%>
+					   			<li><%= link_to 'Editar datos Administrador', '/users/edit' %></li>
+					   			<li><%= link_to 'Administrar Usuarios', users_path %></li>
+					   		<% end %>
+					   	</ul>
+					   </li>
+
+					   <li class='has-sub '><a href='#'><span>Proyecto</span></a>
+					      <ul>
+					         <li class='has-sub '><a href='#'><span>Establecimiento del Contexto</span></a>
+					            <ul>
+					            <% if current_user.rol == 'admin'%>
+					               <li class='has-sub '><a href='#'><span>Propuesta</span></a>
+					               	    <ul>
+					               			<li><%= link_to 'Ingresar Criterios', criterios_path %></li>
+					               			<li><%= link_to 'Ingresar Alcances y Limitaciones', alcance_limitaciones_path %></li>
+					            		</ul>
+					            	</li>
+					            <% end %>
+
+					            <% if current_user.rol == 'gerente'%>
+					               <li class='has-sub '><a href='#'><span>Revision</span></a>
+					               		<ul>
+					               			<li><%= link_to 'Revision Criterios', revision_criterios_path %></li>
+					               			<li><%= link_to 'Revision Alcances y Limitaciones', revision_alcances_limitaciones_path %></li>
+					            		</ul>
+					            	</li>
+					            <% end %>
+
+					            <% if current_user.rol == 'admin'%>
+					               <li class='has-sub '><a href='#'><span>Revision Final</span></a>
+					               		<ul>
+					               			<li><%= link_to 'Revision Final Criterios', revision_final_path %></li>
+					               			<li><%= link_to 'Revision Final Alcances y Limitaciones', revision_final_alcances_limitaciones_path %></li>
+					            		</ul>
+					            	</li>
+					            <% end %>
+					            </ul>
+					         </li>
+
+					         <li class='has-sub '><a href='#'><span>Valoracion del Riesgo</span></a>
+					            <ul>
+					               <li class='has-sub '><a href='#'><span>Analisis del Riesgo</span></a>
+					               	    <ul>
+					               	    	<% if current_user.rol == 'admin'%>
+						               	    	<li class='has-sub '><a href='#'><span>Identificacion del Riesgo</span></a>
+						               	    		<ul>
+						               					<li><%= link_to 'Identificacion de Activos', activos_path %></li>
+														<li><%= link_to 'Identificacion de Amenazas', amenazas_path %></li>
+														<li><%= link_to 'Identificacion de vulnerabilidades', vulnerabilidads_path %></li>
+														<li><%= link_to 'Identificacion de Consecuencias', consecuences_path %></li>
+														<li><%= link_to 'Identificacion de Controles', controles_path %></li>
+													</ul>
+						               			</li>
+					               			<% end %>
+
+					               			<li><%= link_to 'Estimacion del Riesgo', evaluacions_path %>
+					               	    		
+					               			</li>
+					            		</ul>
+					            	</li>
+					            	
+					               <li class='has-sub '><a href='#'><span>Evaluacion del Riesgo</span></a>
+					               		<ul>
+					               			
+					            		</ul>
+					            	</li>
+					            </ul>
+					         </li>
+
+					          <li class='has-sub '><a href='#'><span>Tratamiento del Riesgo</span></a>
+					            <ul>
+					               
+					            </ul>
+					         </li>
+					      </ul>
+					   </li>
+
+					   <li><a href='#'><span>Monitoreo</span></a>
+					   </li>
+					<% end %>
+					</ul>
+		
+		      	<br/>
+
+		      </div>
+
+		        <p class = "navbar-text pull-right">
+					<% if user_signed_in? %>
+						Ingresaste como <%= current_user.email %>. No eres tu?
+						<%= link_to "Salir", destroy_user_session_path, :method => :delete %>
+					<% else %>
+						<%= link_to "Registrarse", new_user_registration_path %> or <%= link_to "Ingresar", new_user_session_path %>
+					<% end %>
+				</p>
+			
+		</div>
+	</div>
+</header>
+
+<%= yield %>
+
+</body>
+<div id="footer">
+	<div id="footer_in">
+		<p></p>
+		<span> SISTEMA CONTROL DE RIESGOS</span>
+	</div>
+</div>
+</html>

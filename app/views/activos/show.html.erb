@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @activo.nombre %>
+</p>
+
+<p>
+  <b>Descripcion:</b>
+  <%= @activo.descripcion %>
+</p>
+
+<p>
+  <b>Propietario:</b>
+  <%= @activo.propietario %>
+</p>
+
+<p>
+  <b>Tipo:</b>
+  <%= @activo.tipo %>
+</p>
+
+<p>
+  <b>Prioridad:</b>
+  <%= @activo.prioridad %>
+</p>
+
+<%= link_to 'Editar', edit_activo_path(@activo) %> |
+<%= link_to 'Atras', activos_path %>

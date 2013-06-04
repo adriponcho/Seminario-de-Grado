@@ -1,0 +1,26 @@
+<br/>
+<br/>
+<br/>
+<p id="notice"><%= notice %></p>
+<div class="hero-unit">
+
+  <div class = "page-header">
+    <h1><strong>Informacion de Alcance o Limitacion</strong></h1>
+  </div>
+<p>
+  <span class="label label-important">Nombre:</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @alcance_limitacione.nombre %> <br/>
+</p>
+
+<p>
+  <span class="label label-important">Descripcion:</span> &nbsp;<%= @alcance_limitacione.descripcion %> <br/>
+</p>
+
+<p>
+  <span class="label label-important">Tipo:</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @alcance_limitacione.tipo %> <br/>
+</p>
+
+</div>
+
+<div class="hero-unit">
+    <%= link_to 'Volver', revision_final_alcances_limitaciones_path %>
+</div>

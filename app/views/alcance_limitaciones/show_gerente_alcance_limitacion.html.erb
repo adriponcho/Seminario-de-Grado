@@ -1,0 +1,40 @@
+<div class = "hero-unit">
+	<p>
+	  <h3><strong>Nombre:</strong></h3> 
+	  &nbsp;&nbsp;&nbsp;&nbsp;<%= @alcance_limitacione.nombre %>
+	</p>
+
+	<p>
+	  <h3><strong>Descripcion:</strong></h3>
+	  &nbsp;&nbsp;&nbsp;&nbsp;<%= @alcance_limitacione.descripcion %>
+	</p>
+
+	<p>
+	  <h3><strong>Tipo:</strong></h3>
+	  &nbsp;&nbsp;&nbsp;&nbsp;<%= @alcance_limitacione.tipo %>
+	</p>
+
+	<%= form_for([@alcance_limitacione, @alcance_limitacione.observacion_alcance_limitacions.build]) do |f| %>
+		<div class = "field">
+			<h4><strong>Observaciones</strong></h4>
+			<%= f.text_area :texto, cols: 30, rows: 10 %>
+		</div>
+
+		<div class = "action">
+			<button class = "btn btn-inverse" type = "f.submit">
+       			Aceptar
+    		</button>
+		</div>
+	<% end %>
+	
+	<h2><strong>Observaciones</strong></h2>
+		<% @alcance_limitacione.observacion_alcance_limitacions.each do |o| %>
+			<table class = "table table-condensed">
+				<h4><%= o.texto %></h4>
+			</table>
+		<% end %>
+</div>
+
+<div class="hero-unit">
+	<%= link_to 'Volver', revision_alcances_limitaciones_path %>
+</div>

@@ -1,0 +1,42 @@
+<br/>
+<br/>
+<br/>
+<div class="hero-unit">
+  <p id="notice"><%= notice %></p>
+  <div class = "page-header">
+    <h2><STRONG>Informacion de Vulnerabilidad</STRONG></h2>
+  </div>
+
+  <p>
+    <b>Descripcion:</b>
+    <%= @vulnerabilidad.descripcion %>
+  </p>
+
+  <p>
+    <b>Tipo:</b>
+    <%= @vulnerabilidad.tipo %>
+  </p>
+
+  
+    <%= form_for([@vulnerabilidad, @vulnerabilidad.consecuences.build]) do |f| %>
+        <h2><strong>Asignar consecuencia</strong></h2>
+          <div class="field">
+            <%= f.label :descripcion %><br />
+            <%= f.text_field :descripcion, :size => '60x10'  %>
+          </div>
+
+          <div class="field">
+            <% naturalezas = {'Temporal' => 'Temporal', 'Permanente' => 'Permanente'} %>
+            <%= f.label :naturaleza %><br />
+            <%= f.select :naturaleza , naturalezas %>
+          </div>
+
+          <div class = "action">
+            <button class = "btn btn-inverse" type = "f.submit">
+                Aceptar
+            </button>
+          </div>
+    <% end %>
+
+  <%= link_to 'Volver', consecuences_path %>
+</div>

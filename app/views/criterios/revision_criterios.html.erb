@@ -1,0 +1,29 @@
+<br/>
+<br/>
+<br/>
+<div class="hero-unit">
+  <p id="notice"><%= notice %></p>
+  <div class = "page-header">
+    <h1><strong>Lista de criterios</strong></h1>
+  </div>
+    <table class = "table table-bordered">
+      <tr>
+        <th>Nombre</th>
+        <th>Tipo</th>
+        <th><center>Acciones</center></th>
+      </tr>
+
+    <% @criterios.each do |criterio| %>
+      <tr>
+        <td><%= criterio.nombre %></td>
+        <td><%= criterio.tipo %></td>
+        <td><%= link_to 'Mostrar', show_gerente_path(criterio) %></td>
+        <td><%= link_to criterio.estado == true ? 'Desaprobar' : 'Aprobar', estado_criterios_path(criterio) %></td>
+      </tr>
+    <% end %>
+    </table>
+
+    <br />
+
+    <%= link_to 'Nuevo Criterio', new_criterio_gerente_path, { :class => "btn btn-inverse" } %>
+</div>
